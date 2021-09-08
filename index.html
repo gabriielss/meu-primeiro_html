@@ -8,6 +8,9 @@
     <title>Meu Primeiro HTML</title>
     <meta name="description" content="Prática 01 do módulo de HTML e CSS">
     <link rel="stylesheet" href="assets\css\style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
     <style>
         strong {
             font-weight: 400
@@ -19,7 +22,7 @@
 <body>
     <header>
         <a 
-        href="/" rel="noopener noreferrer" target="_blank" title="Ir para página inicial">
+        href="" rel="noopener noreferrer" target="_blank" title="Ir para página inicial">
         <img src="https://dieselpunkcore.com/wp-content/uploads/2014/06/logo-placeholder.png" alt="Site Farmácia e Cia." width="80px" height="auto">
         </a>
        
@@ -37,11 +40,11 @@
     </header>
 
     <main>
-        <h1 style="text-align: center;">FARMÁCIA E CIA.</h1>
+        <h1>FARMÁCIA E CIA.</h1>
         <section>
 
             <h2>BELEZA</h2>
-
+            <button class="btn">VER TUDO</button>
             <article>
                 <img src="assets\img\produto-generico.jpg" alt="Imagem de marcação" width="auto" height="240px">
                 <h3>Máquina de Cabelo</h3>
@@ -66,10 +69,16 @@
 
         </section>
 
+        <section class="promocoes">
+            <a href="/promocoes">
+                <img src="assets\img\banner-pharmacy.jpg"  alt="Promoção Imperdivel!">
+            </a>
+        </section>
+
         <section>
 
             <h2>SAÚDE</h2>
-
+            <a class="btn" href="/saude">VER TUDO</a>
             <article>
                 <img src="assets\img\produto-generico.jpg" alt="Imagem de marcação" width="auto" height="240px">
                 <h3>Vitamina Omega 2</h3>
