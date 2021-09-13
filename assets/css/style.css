@@ -4,6 +4,7 @@
     --cor-primaria: rgba(255, 0, 0, 0.5);
     --cor-secundaria: rgba(0, 0, 255, 0.5);
     --cor-secundaria-light: rgba(0, 0, 255, 0.15);
+    --fonte-primaria: 'Quicksand', sans-serif;
 }
 
 *{
@@ -19,33 +20,24 @@ footer {
     padding: var(--espacamento);
 }
 
+
 h1{
-    background-color: var(--cor-primaria);
-    font-family: 'Quicksand', sans-serif;
     margin: var(--espacamento) auto ; 
     padding: var(--espacamento) ;
-    text-align: center;
     width: 50% ;
 }
 
 
 
 h2 {
-    background-color: var(--cor-secundaria);
-    color: white;
-    font-family: 'Quicksand', sans-serif;
     margin: var(--espacamento) auto ; 
     padding: var(--espacamento) ;
     width: 100% ;
 }
 
-section{
-   background-color: var(--cor-secundaria-light);  
-}
-
 header,
 footer {
-  background-color: var(--cor-secundaria-light);
+    background-color: var(--cor-secundaria-light);
 }
 
 .promocoes{
@@ -57,13 +49,53 @@ footer {
     width: 100%;
 }
 
+.cta--intermediario {
+    margin: calc(var(--espacamento)*2) auto;
+}
+
 .btn{
-    background-color: var(--cor-primaria);
     border: 1px solid black;
-    border-radius: calc(var(--espacamento)/4);
-    color: black;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: bolder;
+    border-radius: 0 calc(var(--espacamento)/4);
+    display: block;
+    margin: var(--espacamento) auto;
     padding: calc(var(--espacamento)/4) calc(var(--espacamento)/2);
     text-decoration: none;
+    width: max-content;
+}
+
+.cta{
+    background-color: var(--cor-primaria);
+    color: black;
+    font-family: var(--fonte-primaria);
+    font-weight: bolder;
+    text-align: center;
+}
+
+#LogoTopo {
+    border: 3px solid black;
+    border-radius: 50%;
+}
+
+#LogoTopo img{
+    transition: all .6s ease-out;
+}
+
+#LogoTopo:hover img{
+    transform: rotateZ(360deg);
+}
+
+[ href*="promo "] img {
+    width: 100%
+};
+
+.categoria  {
+    background-color: var(--cor-secundaria-light);  
+}
+
+.categoria__produto {
+    border-radius: 4px;
+}
+
+.categoria__produto--promocao {
+    border: 4px solid var(--cor-secundaria);
 }
