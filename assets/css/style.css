@@ -6,22 +6,22 @@
     background-color: rgba(255, 0, 0, 0.1); */
 }
 
-body{
-    /*FLEX CONTAINER*/ 
-    display: flex;
-    flex-flow: column nowrap;
-}
-
 h1, 
 h2,
 h3 {
     text-align: center;
 }
 
+body{
+    /*FLEX CONTAINER*/ 
+    display: flex;
+    flex-flow: column nowrap;
+}
+
 header {
    /*FLEX CONTAINER*/ 
     display: flex;
-    flex: row nowrap;
+    flex-flow: row nowrap;
     padding: 16px;
 }
 
@@ -43,11 +43,15 @@ header nav ul{
    /*FLEX ITEM */ 
     flex: 0 0 75%;
     /*FLEX CONTAINER */ 
-    align-items:stretch;
     display: flex;
     flex-flow: row nowrap;
     justify-content:space-between;
     list-style: none;
+}
+
+main{
+    display: flex;
+    flex-flow: column nowrap;
 }
 
 main section {
@@ -67,6 +71,7 @@ main section article img{
 
 .banner-middle {
     margin: 32px 0;
+    order: -1;
 }
 
 .btn{
@@ -96,13 +101,15 @@ main section {
         background-color: rgb(235, 233, 135);
         flex-flow: row wrap;
         justify-content: flex-start;
-        padding: 16px;
     }
     main section h2 {
         flex: 1 0 100%;
     }
     article.categoria__produto {
-        flex: 1 1 50%;
+        flex: 0 1 50%;
+    }
+    .banner-middle {
+        order: 0;
     }
 }
 
@@ -111,7 +118,10 @@ main section {
         background-color: rgb(170, 135, 235);
     }
     article.categoria__produto {
-        flex: 1 1 33%;
+        flex: 1 1 25%;
+    }
+    article.categoria__produto--promocao {
+        flex: 2 1 25%;
     }
 }
 
@@ -120,6 +130,6 @@ main section {
         background-color: rgb(235, 163, 135);
     }
     article.categoria__produto {
-        flex: 1 1 25%;
+        flex: 0 1 25%;
     }
 }
