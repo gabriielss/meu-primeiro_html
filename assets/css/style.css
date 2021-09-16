@@ -1,136 +1,125 @@
-/* RESET */ 
-:root{
-    --espacamento: 16px;
-    --cor-primaria: rgba(255, 0, 0, 0.5);
-    --cor-secundaria: rgba(0, 0, 255, 0.5);
-    --cor-secundaria-light: rgba(0, 0, 255, 0.15);
-    --fonte-primaria: 'Quicksand', sans-serif;
-}
-
 *{
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
-} 
-
-body,
-header,
-main,
-footer {
-    padding: var(--espacamento);
+    /* border: 1px dashed red;
+    background-color: rgba(255, 0, 0, 0.1); */
 }
 
-
-h1{
-    margin: var(--espacamento) auto ; 
-    padding: var(--espacamento) ;
-    width: 50% ;
+body{
+    /*FLEX CONTAINER*/ 
+    display: flex;
+    flex-flow: column nowrap;
 }
 
-
-
-h2 {
-    margin: var(--espacamento) auto ; 
-    padding: var(--espacamento) ;
-    width: 100% ;
-}
-
-header,
-footer {
-    background-color: var(--cor-secundaria-light);
-}
-
-.promocoes{
-    border: 2px solid var(--cor-primaria);
-    margin: var(--espacamento) auto;
-}
-
-.promocoes img {
-    width: 100%;
-}
-
-#banner{
-    background-color: #dce5e2;
-    background-image: url(https://www.america-retail.com/static/2020/09/farmacias-1.jpg);
-    background-attachment: fixed;
-    height: 432px;
-}
-
-.btn{
-    border: 1px solid black;
-    border-radius: 0 calc(var(--espacamento)/4);
-    display: block;
-    margin: var(--espacamento) auto;
-    padding: calc(var(--espacamento)/4) calc(var(--espacamento)/2);
-    text-decoration: none;
-    width: max-content;
-}
-
-.cta{
-    background-color: var(--cor-primaria);
-    color: black;
-    font-family: var(--fonte-primaria);
-    font-weight: bolder;
+h1, 
+h2,
+h3 {
     text-align: center;
 }
 
-#LogoTopo {
-    border: 3px solid black;
-    border-radius: 50%;
-}
-
-#LogoTopo img{
-    transition: all .6s ease-out;
-}
-
-#LogoTopo:hover img{
-    transform: rotateZ(360deg);
-}
-
-[ href*="promo "] img {
-    width: 100%
-};
-
-.categoria{
-    background-color: var(--cor-secundaria-light);
-}
-
-.categoria__produto {
-    border-radius: 4px;
-}
-
-.categoria__produto--promocao {
-    border: 4px solid var(--cor-secundaria);
-}
-
-header{
-    align-items: center;
+header {
+   /*FLEX CONTAINER*/ 
     display: flex;
-    /* flex-direction: row;
-    flex-wrap: nowrap; */
-    flex-flow: row nowrap;
-    justify-content: space-between;
+    flex: row nowrap;
+    padding: 16px;
 }
 
-header > a {
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: 80px;
+header a {
+   /*FLEX ITEM */ 
+    flex: 0 1 80px;
 }
 
-header nav{
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: auto;
-}
-
-ul{
-    display: flex ;
-    flex-direction: row;
+header nav {
+   /*FLEX ITEM */ 
+    flex: 1 0 auto;
+   /*FLEX CONTAINER*/ 
+    display: flex;
     justify-content: flex-end;
+    align-items: center;
+}
+
+header nav ul{
+   /*FLEX ITEM */ 
+    flex: 0 0 75%;
+    /*FLEX CONTAINER */ 
+    align-items:stretch;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content:space-between;
     list-style: none;
 }
 
-li{
+main section {
+    align-items: stretch;
+    background-color: skyblue;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
     padding: 16px;
+}
+
+
+main section article img{
+    display: block;
+    margin: 16px auto;
+}
+
+.banner-middle {
+    margin: 32px 0;
+}
+
+.btn{
+    border: 1px solid black ;
+    background-color: #fff;
+    display: block;
+    font-weight: bold;
+    margin: 8px auto;
+    padding: 6px 16px ;
+}
+
+footer{
+    padding: 32px;
+}
+
+footer p{
+    text-align: center;
+}
+
+main section {
+    background-color: rgb(183, 235, 135);
+}
+
+@media only screen and (min-width: 576px){
+    main section {
+        align-items: stretch;
+        background-color: rgb(235, 233, 135);
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        padding: 16px;
+    }
+    main section h2 {
+        flex: 1 0 100%;
+    }
+    article.categoria__produto {
+        flex: 1 1 50%;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    main section {
+        background-color: rgb(170, 135, 235);
+    }
+    article.categoria__produto {
+        flex: 1 1 33%;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    main section {
+        background-color: rgb(235, 163, 135);
+    }
+    article.categoria__produto {
+        flex: 1 1 25%;
+    }
 }
