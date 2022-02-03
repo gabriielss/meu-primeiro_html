@@ -100,7 +100,7 @@ main section {
         align-items: stretch;
         background-color: rgb(235, 233, 135);
         flex-flow: row wrap;
-        justify-content: flex-start;
+        justify-content: space-between;
     }
     main section h2 {
         flex: 1 0 100%;
